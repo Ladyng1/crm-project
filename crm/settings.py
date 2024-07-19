@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Third-party Apps
     "crispy_forms",
     "crispy_bootstrap5",
+
 ]
 
 MIDDLEWARE = [
