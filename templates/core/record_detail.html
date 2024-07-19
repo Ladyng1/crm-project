@@ -1,0 +1,102 @@
+{% extends "partials/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Record Detail{% endblock %}
+
+{% block content %}
+
+<!--<div class="container border p-5 form-layout">
+    <h5 class="mb-5 border-bottom py-3">You are viewing {{record.first_name}} {{record.last_name}}'s Record</h5>
+    <p>First Name: {{record.last_name}}</p>
+    <p>Last Name: {{record.email}}</p>
+    <p>Phone: {{record.phone}}</p>
+    <p>Address: {{record.address}}</p>
+    <p>City: {{record.city}}</p>
+    <p>State: {{record.state}}</p>
+    <p>Zip: {{record.zip_code}}</p>
+    <p>State: {{record.state}}</p>
+    <p>Country: {{record.country}}</p>
+    <p>Date Joined: {{record.creation_date|date:"F d, Y"}}</p>
+
+    <a class="btn btn-secondary mt-3" href="{% url 'core:update' record.id %}">Update record</a>
+</div>-->
+
+<div class="container border p-5 form-layout">
+    <p><i class="fa fa-user-circle" aria-hidden="true" style="color: #40A2D8;"></i> &nbsp;<span style="">{{ record.last_name|upper }}</span>, {{ record.first_name }}</p>
+    <table class="table table-bordered border-primary record__detail">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ record.id }}</td>
+            </tr>
+            <!--<tr>
+                <th>Full Name</th>
+                <td>{{ record.last_name|upper }}, {{ record.first_name }}</td>
+            </tr>-->
+            <tr>
+                <th>Email</th>
+                <td>{{ record.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ record.phone }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ record.address }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ record.city }}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{{ record.state }}</td>
+            </tr>
+            <tr>
+                <th>Zip Code</th>
+                <td>{{ record.zip_code }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ record.country }}</td>
+            </tr>
+            <tr>
+                <th>Date Joined</th>
+                <td>{{ record.creation_date|date:"F d, Y" }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <a class="btn btn-secondary border" href="{% url 'core:dashboard' %}"><i class="fa fa-arrow-left" aria-hidden="true" style="color: #F8F4EC;"></i> Back</a>&nbsp;
+        <a class="btn btn-primary border-info" href="{% url 'core:update' record.id %}">Update record &nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #40A2D8;"></i></a>&nbsp;
+        <a class="btn btn-danger border-danger" href="{% url 'core:delete' record.id %}">Delete <i class="fa fa-trash" aria-hidden="true"></i></a>
+    </div>
+</div>
+
+
+
+<!--<div class="card container border p-5 form-layout">
+    <div class="card-body">
+        <p><strong>ID: </strong><span class="record__detail">{{ record.id }}</span></p>
+        <p><strong>Full Name: </strong><span class="record__detail">{{ record.last_name|upper }}, {{ record.first_name }}</span></p>
+        <p><strong>Email: </strong><span class="record__detail">{{ record.email }}</span></p>
+        <p><strong>Phone: </strong><span class="record__detail">{{ record.phone }}</span></p>
+        <p><strong>Address: </strong><span class="record__detail">{{ record.address }}</span></p>
+        <p><strong>City: </strong><span class="record__detail">{{ record.city }}</span></p>
+        <p><strong>State: </strong><span class="record__detail">{{ record.state }}</span></p>
+        <p><strong>Zip Code: </strong><span class="record__detail">{{ record.zip_code }}</span></p>
+        <p><strong>Country: </strong><span class="record__detail">{{ record.country }}</span></p>
+        <p><strong>Date Joined: </strong><span class="record__detail">{{ record.creation_date|date:"F d, Y" }}</span></p>
+    </div>
+    <div class="">
+    <a class="btn btn-secondary border-info" href="{% url 'core:dashboard' %}">Back</a>
+        &nbsp;
+    <a class="btn btn-primary border" href="{% url 'core:update' record.id %}">Update record</a>
+        &nbsp;
+    <a class="btn btn-danger border-white" href="{% url 'core:delete' record.id %}">Delete</a>
+    </div>
+</div>-->
+
+
+{% endblock content %}
